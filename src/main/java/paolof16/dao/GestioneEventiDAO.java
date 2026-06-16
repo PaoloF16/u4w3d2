@@ -26,5 +26,13 @@ public class GestioneEventiDAO {
         if(fromDB == null) throw new RuntimeException(String.valueOf(id));
         return fromDB;
     }
-    
+    public GestioneEventi deleteById(long id){
+        GestioneEventi fromDB = this.findById(id);
+        EntityTransaction transaction = this.entityManager.getTransaction();
+        transaction.begin();
+        this.entityManager.remove(fromDB);
+        transaction.commit();
+        System.out.println("Evento rimosso" + fromDB + "con essito");
+    }
+
 }

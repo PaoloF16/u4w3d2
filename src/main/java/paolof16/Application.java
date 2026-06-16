@@ -15,10 +15,13 @@ public class Application {
         System.out.println("Hello World!");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         GestioneEventiDAO eventiDAO = new GestioneEventiDAO(entityManager);
-        GestioneEventi firstEvent = new GestioneEventi(123,"Concert", LocalDate.now(),"Lorem ipsum", typeEvent.PUBBLICO,300);
-        GestioneEventi secondEvent = new GestioneEventi(123,"Concert", LocalDate.now(),"Lorem ipsum", typeEvent.PUBBLICO,300);
-        GestioneEventi thirdEvent = new GestioneEventi(123,"Concert", LocalDate.now(),"Lorem ipsum", typeEvent.PUBBLICO,300);
+        GestioneEventi firstEvent = new GestioneEventi("Concert", LocalDate.now(),"Lorem ipsum", typeEvent.PUBBLICO,300);
+        GestioneEventi secondEvent = new GestioneEventi("Concert", LocalDate.now(),"Lorem ipsum", typeEvent.PUBBLICO,300);
+        GestioneEventi thirdEvent = new GestioneEventi("Concert", LocalDate.now(),"Lorem ipsum", typeEvent.PUBBLICO,300);
 
+      /*  eventiDAO.save(firstEvent);
+        eventiDAO.save(secondEvent);
+        eventiDAO.save(thirdEvent);*/
 
     }
 }

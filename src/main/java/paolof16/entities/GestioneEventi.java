@@ -24,8 +24,7 @@ public class GestioneEventi {
     @Column(name="max_users")
     private int numeroMassimoPartecipanti;
 
-    public GestioneEventi(long id, String title, LocalDate dataEvento, String description, typeEvent tipoEvento, int numeroMassimoPartecipanti){
-        this.id = id;
+    public GestioneEventi( String title, LocalDate dataEvento, String description, typeEvent tipoEvento, int numeroMassimoPartecipanti){
         this.title = title;
         this.dataEvento = dataEvento;
         this.description = description;
