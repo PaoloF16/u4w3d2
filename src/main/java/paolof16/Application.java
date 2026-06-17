@@ -19,9 +19,9 @@ public class Application {
         GestioneEventi secondEvent = new GestioneEventi("Concert", LocalDate.now(),"Lorem ipsum", typeEvent.PUBBLICO,300);
         GestioneEventi thirdEvent = new GestioneEventi("Concert", LocalDate.now(),"Lorem ipsum", typeEvent.PUBBLICO,300);
 
-      /*  eventiDAO.save(firstEvent);
+       eventiDAO.save(firstEvent);
         eventiDAO.save(secondEvent);
-        eventiDAO.save(thirdEvent);*/
+        eventiDAO.save(thirdEvent);
 
     }
 }

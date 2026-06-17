@@ -23,6 +23,8 @@ public class GestioneEventi {
     private typeEvent tipoEvento;
     @Column(name="max_users")
     private int numeroMassimoPartecipanti;
+    @Column
+    private long location_id;
 
     public GestioneEventi( String title, LocalDate dataEvento, String description, typeEvent tipoEvento, int numeroMassimoPartecipanti){
         this.title = title;
@@ -30,6 +32,7 @@ public class GestioneEventi {
         this.description = description;
         this.tipoEvento = tipoEvento;
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
+        this.location_id = location_id;
 
     }
 
