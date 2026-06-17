@@ -33,6 +33,7 @@ public class GestioneEventiDAO {
         this.entityManager.remove(fromDB);
         transaction.commit();
         System.out.println("Evento rimosso" + fromDB + "con essito");
+        return fromDB;
     }
 
 }
