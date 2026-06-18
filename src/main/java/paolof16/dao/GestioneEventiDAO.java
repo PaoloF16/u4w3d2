@@ -6,12 +6,13 @@ import paolof16.entities.GestioneEventi;
 import paolof16.entities.typeEvent;
 
 public class GestioneEventiDAO {
-    private final EntityManager entityManager;
+    private final EntityManager entityManager;//Creo el EntityManager
 
     public GestioneEventiDAO(EntityManager entity){
         this.entityManager = entity;
-    }
-    public void save(GestioneEventi newEvent){
+    }//Creo el constructor para pasar via param el objeto
+
+    public void save(GestioneEventi newEvent){//Start run the aplicattion to save in DB
         EntityTransaction transaction = this.entityManager.getTransaction();
 
         transaction.begin();

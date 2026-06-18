@@ -7,22 +7,26 @@ public class Partecipazione {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column
-    private Persona people;
+    @ManyToOne
+    @JoinColumn(name = "persona_id")
+    private Persona persona;
+    @ManyToOne
+    @JoinColumn(name = "evento_id")
     private GestioneEventi eventi;
     @Enumerated(EnumType.STRING)
     private Stato stato;
 
-    public Partecipazione(){
+    public Partecipazione(GestioneEventi eventi){
 
+        this.eventi = eventi;
     }
 
     public long getId() {
         return id;
     }
 
-    public Persona getPeople() {
-        return people;
+    public Persona getPersona() {
+        return persona;
     }
 
     public GestioneEventi getEventi() {
@@ -37,7 +41,7 @@ public class Partecipazione {
     public String toString() {
         return "Partecipazione{" +
                 "id=" + id +
-                ", people=" + people +
+                ", persona=" + persona +
                 ", eventi=" + eventi +
                 ", stato=" + stato +
                 '}';

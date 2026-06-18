@@ -18,21 +18,29 @@ public class GestioneEventi {
     private LocalDate dataEvento;
     @Column
     private String description;
+
     @Column(name="type_event")
     @Enumerated(EnumType.STRING)
     private typeEvent tipoEvento;
+
     @Column(name="max_users")
     private int numeroMassimoPartecipanti;
-    @Column
-    private long location_id;
 
-    public GestioneEventi( String title, LocalDate dataEvento, String description, typeEvent tipoEvento, int numeroMassimoPartecipanti){
+
+    @ManyToOne
+    @JoinColumn(name = "location_id")
+    private Location location;
+
+    public GestioneEventi( String title, LocalDate dataEvento, String description, typeEvent tipoEvento, int numeroMassimoPartecipanti,Location location){
         this.title = title;
         this.dataEvento = dataEvento;
         this.description = description;
         this.tipoEvento = tipoEvento;
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
-        this.location_id = location_id;
+        this.location = location;
+
+    }
+    protected GestioneEventi(){
 
     }
 

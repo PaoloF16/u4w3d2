@@ -3,6 +3,7 @@ package paolof16.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -17,6 +18,12 @@ public class Persona {
     private LocalDate datebirth;
     @Enumerated(EnumType.STRING)
     private Sesso sesso;
+    @OneToMany(mappedBy = "persona")
+    private List<Partecipazione> listaPartecipazione;
+
+    public Persona(){
+
+    }
 
     public Persona(String first_name,String last_name,String email,LocalDate datebirth){
         this.first_name = first_name;
