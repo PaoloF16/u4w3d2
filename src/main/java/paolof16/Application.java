@@ -7,10 +7,7 @@ import paolof16.dao.GestioneEventiDAO;
 import paolof16.dao.LocationDAO;
 import paolof16.dao.PartecipazioneDAO;
 import paolof16.dao.PersonaDAO;
-import paolof16.entities.GestioneEventi;
-import paolof16.entities.Location;
-import paolof16.entities.Persona;
-import paolof16.entities.typeEvent;
+import paolof16.entities.*;
 
 import java.time.LocalDate;
 
@@ -23,7 +20,7 @@ public class Application {
         LocationDAO locationDAO = new LocationDAO(entityManager);
         PartecipazioneDAO partecipazioneDAO = new PartecipazioneDAO(entityManager);
         PersonaDAO personaDAO = new PersonaDAO(entityManager);
-        //Partecipazione
+
 
 
         //Persona
@@ -46,6 +43,11 @@ public class Application {
         eventiDAO.save(firstEvent);
         eventiDAO.save(secondEvent);
         eventiDAO.save(thirdEvent);
+        //Partecipazione
+        Partecipazione partecipazioneList = new Partecipazione(firstPerson,firstEvent,Stato.CONFERMATO);
+        Partecipazione secondList = new Partecipazione(secondPerson,secondEvent,Stato.DA_CONFERMARE);
+        partecipazioneDAO.save(partecipazioneList);
+        partecipazioneDAO.save(secondList);
 
 
 

@@ -2,6 +2,7 @@ package paolof16.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import paolof16.entities.Partecipazione;
 
 
 public class PartecipazioneDAO {
@@ -11,7 +12,7 @@ public class PartecipazioneDAO {
     public PartecipazioneDAO(EntityManager em) {
         this.em = em;
     }
-    public void save(PartecipazioneDAO newListP){
+    public void save(Partecipazione newListP){
         EntityTransaction transaction = this.em.getTransaction();
         transaction.begin();
         this.em.persist(newListP);
